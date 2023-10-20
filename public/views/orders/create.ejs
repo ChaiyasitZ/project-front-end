@@ -1,0 +1,37 @@
+<!-- views/order-create.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Book - Book Store</title>
+    <link rel="stylesheet" href="../../css/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Order Book</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Browse Books</a></li>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/orders">Orders</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Order Details</h2>
+        <form action="/orders/create" method="POST">
+            <input type="hidden" name="bookId" value="<%= bookId %>"> <!-- Hidden input to pass bookId -->
+
+            <label for="customerId">Customer ID:</label>
+            <input type="number" id="customerId" name="customerId" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </main>
+</body>
+</html>

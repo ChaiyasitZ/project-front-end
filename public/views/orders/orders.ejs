@@ -1,0 +1,32 @@
+<!-- views/orderlist.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List - Book Store</title>
+    <link rel="stylesheet" href="../../css/styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>Order List</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Browse Books</a></li>
+            <li><a href="/customers">Customers</a></li>
+            <li><a href="/orders">Orders</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>List of Orders</h2>
+        <ul>
+            <% orders.forEach(order => { %>
+                <li><a href="/orders/<%= order.id %>">Order #<%= order.id %></a></li>
+            <% }); %>
+        </ul>
+    </main>
+
+</body>
+</html>

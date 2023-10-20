@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <h1>Update orders</h1>
+    
+    <form action="/orders/update/<%= order.id %>" method="POST">
+        <label for="customer_id">Customer ID</label>
+        <input type="text" name="customer_id" id="customer_id" value="<%= order.customer_id %>">
+        <label for="book_id">Book ID</label>
+        <input type="text" name="book_id" id="book_id" value="<%= order.book_id %>">
+        <label for="quantity">Quantity</label>
+        <input type="text" name="quantity" id="quantity" value="<%= order.quantity %>">
+        <input type="submit" value="Update">
+    </form>
+    
+</body>
+</html>
